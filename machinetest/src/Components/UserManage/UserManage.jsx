@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from "react";
 import './UserManage.css'
-import {BrowserRouter as Link} from "react-router-dom";
+import {BrowserRouter as Router,Route,Switch,Link} from "react-router-dom";
 import { MdModeEdit, MdDelete } from "react-icons/md";
 import Users from "../../utils/Users";
 import UserManageModal from "../UsermanageModal/UsermanageModal";
