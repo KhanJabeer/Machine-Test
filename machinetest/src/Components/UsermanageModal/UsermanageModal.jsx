@@ -29,7 +29,7 @@ const UserManageModal = ({ add,users,userId,onClose }) => {
 
             setIndex(findIndex)
 
-            console.log("sdfkjsahdfjasd",findIndex)
+            console.log("findIndexCheck",findIndex)
             const {name,email,address,country,status,role} = findUser;
             setUserData({
                 name,email,address,country,status,role
@@ -54,7 +54,7 @@ const UserManageModal = ({ add,users,userId,onClose }) => {
             localStorage.setItem("users",JSON.stringify(users))
             onClose()
         }
-        console.log("asdfjsadhfjhads",users)
+        console.log("usersCheck",users)
     }
 
     const resetForm = () => {

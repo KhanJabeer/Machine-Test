@@ -1,7 +1,5 @@
 import React,{useEffect,useState} from "react";
 import './Login.css'
-import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
-
 
 
 const Login = ({ users,changeAuth,history }) => {

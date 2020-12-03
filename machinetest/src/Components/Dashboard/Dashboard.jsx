@@ -1,11 +1,11 @@
 import React,{useEffect,useState} from "react";
 import './Dashboard.css'
-import {BrowserRouter as Router,Route,Switch,Link,Redirect} from "react-router-dom";
+import {BrowserRouter as Link} from "react-router-dom";
 
 
 const Dashboard = ({ loggedInUser,history }) => {
 
-  console.log("sdakjfhsalkjdf",loggedInUser)
+  console.log("loggedInUserCheck",loggedInUser)
 
   const [userDetails,setUserDetails] = useState([])
 
