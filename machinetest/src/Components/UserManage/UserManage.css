@@ -1,0 +1,51 @@
+.usermanage_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #F8F8F8;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 5px 5px 0px 0px;
+    height: 35px;
+}
+.link_header{
+    color: black;
+}
+.useradd_btn button{
+    border-radius: 2px;
+    border: none;
+    width: 90px;
+    height: 30px;
+    background-color: rgb(38, 128, 235) ;
+    font-size: 16px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+.usermanage_content{
+    width: 520px;
+    text-align: center;
+    margin: 128px auto;
+    border-radius: 10px;
+    padding-bottom: 32px;
+}
+.users{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 5px 15px 5px;
+    
+}
+.edit_icon,
+.delete_icon{
+    margin: 5px;
+    cursor: pointer;
+    font-size: 22px;
+}
+.edit_icon{
+    color: forestgreen;
+}
+.delete_icon{
+    color: red;
+}

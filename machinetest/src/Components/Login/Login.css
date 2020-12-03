@@ -1,0 +1,28 @@
+.login_content{
+    margin-top: 50px;
+    padding: 8px;
+}
+.login_fields{
+    margin: 10px;
+    padding: 8px;
+}
+.input_boxes{
+    height: 27px;
+    width: 200px; 
+    padding: 4px;
+    border: none;
+    outline: 0;
+    box-shadow: 0 0 1.5px 0px #ccc;
+    border: 1px solid #ccc;
+    border-radius: 4px !important;
+}
+.login_btn button{
+    border-radius: 2px;
+    border: none;
+    width: 90px;
+    height: 30px;
+    background-color: cornsilk;
+    font-size: 16px;
+    color: black;
+   cursor: pointer;
+}

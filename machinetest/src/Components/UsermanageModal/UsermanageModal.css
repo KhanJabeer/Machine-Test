@@ -1,0 +1,110 @@
+.modal {
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    top: 100px;
+    right: 500px;
+    background-color: white;
+    padding: 10px;
+}
+.modal_title{
+    margin: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    text-align: center;
+}
+.field_label{
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+.userdata_fields{
+    height: 24px;
+    width: 200px; 
+    padding: 4px;
+    border: none;
+    outline: 0;
+    box-shadow: 0 0 1.5px 0px #ccc;
+    border: 1px solid #ccc;
+    border-radius: 4px !important;
+}
+.status_fields{
+    height: 35px;
+    width: 208px;
+    padding: 4px;
+    border: none;
+    outline: 0;
+    box-shadow: 0 0 1.5px 0px #ccc;
+    border: 1px solid #ccc;
+    border-radius: 4px !important;  
+}
+.divider{
+    border-bottom: 1px solid grey;
+}
+.btn_wraps{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.cancel_btn {
+    border-radius: 2px;
+    border: none;
+    width: 90px;
+    height: 30px;
+    background-color: #E0EBCF ;
+    font-size: 16px;
+    color: black;
+    outline: none;
+    padding: 7px ;
+    margin: 7px ;
+    cursor: pointer;
+
+}
+.addedit_btn {
+    border-radius: 2px;
+    border: none;
+    width: 90px;
+    height: 30px;
+    background-color: rgb(38, 128, 235) ;
+    font-size: 16px;
+    color: white;
+    outline: none;
+    padding: 7px ;
+    margin: 7px ;
+    cursor: pointer;
+}
+
+
+/*DELETE MODAL CSS */
+.delete_modal {
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    top: 150px;
+    right: 613px;
+    background-color: white;
+    padding: 10px;
+}
+.delmodal_title{
+    text-align: left;
+    font-size: 18px;
+    margin: 10px;
+}
+.del_content{
+    margin: 15px;
+    padding: 8px;
+}
