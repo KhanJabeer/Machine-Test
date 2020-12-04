@@ -30,7 +30,7 @@ const App = () => {
         setUsers(userDetails)
       }
 
-      console.log("sadfjashldfjsdf",localStorage.loggedInUser === "")
+      console.log("localStorageCheck",localStorage.loggedInUser === "")
 
       if(localStorage.loggedInUser === "") {
          setAuthenticated(false)
