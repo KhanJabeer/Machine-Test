@@ -56,7 +56,8 @@ const logout = () => {
         </header>
 
            <div className="dash_content">
-
+             <div className="dash_msg">This machine test is to show the list of users with one admin user of add,edit and with one root user of add,edit,delete
+             and also there are two users who will be only able to view the dashboard screen.</div>
            <div className="userstatus_header">User List<span>Status</span></div>
             {userDetails && userDetails.length > 0 && userDetails.map((user) => {
               return(

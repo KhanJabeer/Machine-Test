@@ -33,6 +33,12 @@
     margin: 128px auto;
     border-radius: 10px;
     padding-bottom: 32px;
+    margin-top: 50px;
+}
+.dash_msg{
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
 }
 .userstatus_header{  
     font-weight: bold;
