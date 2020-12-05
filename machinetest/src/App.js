@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Route} from "react-router-dom";
 import Login from './Components/Login/Login'
 import Dashboard from './Components/Dashboard/Dashboard'
 import UserManage from './Components/UserManage/UserManage'
+import TodoList from './Components/TodoList/TodoList'
 import "./index.css";
 import "./App.css";
 import Users from "./utils/Users";
@@ -13,6 +14,7 @@ const App = () => {
   const [isAuthenticated,setAuthenticated] = useState(null)
   const [users,setUsers] = useState([])
   const [loggedInUser,setLoggedInUser] = useState(null)
+ 
 
   useEffect(() => {
 
@@ -30,7 +32,6 @@ const App = () => {
         setUsers(userDetails)
       }
 
-      console.log("localStorageCheck",localStorage.loggedInUser === "")
 
       if(localStorage.loggedInUser === "") {
          setAuthenticated(false)
@@ -39,6 +40,9 @@ const App = () => {
         const loggedUser = JSON.parse(localStorage.getItem("loggedInUser"))
         setLoggedInUser(loggedUser)
       }
+      
+     
+      
   },[])
 
   const changeAuth = () => {
@@ -47,13 +51,17 @@ const App = () => {
     setLoggedInUser(loggedUser)
   }
 
+ 
   return(
     <div className="App">
         
     <Router> 
+
+      
            <Route exact  path="/" render={(props) => <Login {...props} changeAuth={changeAuth} users={users} /> }/> 
-           <PrivateRoute path="/usermanage" component={UserManage} isAuthenticated={isAuthenticated} />
-           <PrivateRoute path="/dashboard" component={Dashboard} isAuthenticated={isAuthenticated} loggedInUser={loggedInUser} />
+           <PrivateRoute path="/todolist"  component={TodoList} isAuthenticated={isAuthenticated} />
+           <PrivateRoute path="/usermanage"  component={UserManage} isAuthenticated={isAuthenticated} />
+           <PrivateRoute path="/dashboard" component={Dashboard} isAuthenticated={isAuthenticated} loggedInUser={loggedInUser}/>
 
     </Router> 
      </div>

@@ -1,21 +1,26 @@
-import React,{useEffect,useState} from "react";
+import React,{useState} from "react";
 import './Login.css'
 
 
+
 const Login = ({ users,changeAuth,history }) => {
+  const[emailError,setEmailError]=useState(false)
+  const[passError,setPassError]=useState(false)
 
 const handleSubmit =(e)=>{
-    e.preventDefault()
-  
+  e.preventDefault()
+   
     const validUser = users && users.findIndex(user => user.email === loginData.email && user.password === loginData.password)
-    console.log("validUserCheck",validUser)
     if(validUser !== -1) {
       localStorage.setItem("loggedInUser",JSON.stringify(users[validUser]))
       changeAuth()
       history.push("/dashboard")
     }else {
       alert("Invalid email or password")
+    
     }
+   
+  
 }   
 
 const [loginData,setLoginData] = useState({email:"",password:""})
@@ -24,6 +29,24 @@ const {email,password} = loginData;
 
 const handleChange = (e) => {
   setLoginData({...loginData,[e.target.name]:e.target.value})
+ setEmailError(false)
+ setPassError(false)
+}
+const validate = (e)=>{
+  e.preventDefault()
+  var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+ 
+ if(loginData && loginData.email === "" ) {
+    setEmailError("Field Required")
+    } else if(re.test(loginData && loginData.email) === false ){
+      setEmailError("Please Include @ . in the Email Address")
+    }
+ 
+    
+  if(loginData.password === ""){
+    setPassError("Field Required")
+  }
+  handleSubmit(e)
 }
 
   return(
@@ -42,8 +65,10 @@ const handleChange = (e) => {
                 value={email}
                 placeholder="Email" 
                 onChange={(e) => handleChange(e)}
-                required />
+              />
+                <div className="err_msg">{emailError }</div>
             </div>
+ 
 
             <div className="login_fields">
                 <input 
@@ -53,11 +78,12 @@ const handleChange = (e) => {
                 value={password}
                 placeholder="Password"
                 onChange={(e) => handleChange(e)}
-                required/>
+               />
+                <div className="err_msg">{passError}</div>
             </div>
-
+           
             <div className="login_btn">
-            <button onClick={handleSubmit}>Login</button>
+            <button onClick={(e)=>validate(e)}>Login</button>
             </div>
         </form>
     </div>

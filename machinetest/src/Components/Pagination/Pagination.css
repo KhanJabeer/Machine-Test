@@ -1,0 +1,56 @@
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+.page_no{
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid black;
+    background:  white;
+      text-decoration: none;
+    width: 20px;
+    height: 26px;
+    cursor: pointer;
+    outline: -webkit-focus-ring-color auto 1px;
+    text-align: center;
+
+}
+.pageno_link{
+    text-decoration: none;
+    color: black ;
+}
+
+.page_no.active{
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    background: grey;
+    text-decoration: none;
+    width: 20px;
+    height: 26px;
+    cursor: pointer;
+    outline: -webkit-focus-ring-color auto 1px;
+    text-align: center;
+}
+ .active > .pageno_link  {
+color:black;
+background: grey;
+}
+.page_icon{
+    font-size: 20px;
+    margin: 4px;
+    cursor: pointer;
+    color: black ;
+    border: none;
+    background: inherit;
+}
+.page_text{
+    font-size: 14px;
+    margin: 4px;
+    cursor: pointer;
+    color: black;
+    border: none;
+    background: inherit;
+}

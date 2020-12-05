@@ -1,0 +1,44 @@
+.post_title{
+  font-weight: bold;
+  padding: 10px 20px 10px 0px;
+  background-color: #F8F8F8;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 5px 5px 0px 0px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  
+}
+.todolist_content{
+  width: 620px;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+  min-height: 300px;
+}
+.table_style{
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 70px;
+  margin-bottom: 50px;
+ 
+}
+.table_style td {
+  border: 1px solid white;
+  text-align: left;
+  padding: 8px;
+  
+}
+.table_style  th {
+  border: 1px solid white;
+  text-align: center;
+  padding: 8px;
+  
+}
+.table_style  th {
+ background-color: white;
+  
+}
