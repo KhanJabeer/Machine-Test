@@ -1,0 +1,11 @@
+Optimisation Steps
+
+* Avoided inline styling
+* Re use of components
+* Avoided Unnecessary use of variable declarations and functions.
+* Avoiding unnecessary imports in the components.
+* Avoided duplication of data with validations.
+* Minimal use of third party libraries.
+* Checking dependencies.
+* Avoided props in initial state declaration.
+* Avoided spread in props.
