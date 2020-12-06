@@ -10,6 +10,11 @@
     justify-content: flex-start;
   
 }
+.load_class{
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
 .todolist_content{
   width: 620px;
   text-align: center;

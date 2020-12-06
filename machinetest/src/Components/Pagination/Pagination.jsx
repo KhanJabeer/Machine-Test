@@ -20,8 +20,8 @@ export const PaginationHelper={
     }
    return {'pageNumber':pageNumber}
   }
+ 
 }
-
 const Pagination = ({ postsPerPage, totalPosts, paginate,pageNo,udpatePageNumber,paginationIndex,updatePaginationIndex }) => {
   
   const pageNumbers = [];
@@ -31,12 +31,12 @@ const Pagination = ({ postsPerPage, totalPosts, paginate,pageNo,udpatePageNumber
   }
   
 const totalpaginationdivideLength=Math.ceil(pageNumbers.length/5);
-
+console.log(pageNumbers,"skmdks")
 return (
   
       <div className='pagination'>
-  
-
+  {pageNumbers.length>0 ? 
+<>
       <button onClick={()=>updatePaginationIndex&&updatePaginationIndex(paginationIndex>1?paginationIndex-1:0,pageNumbers.length)} className="page_icon">&laquo;</button>
 
        <button onClick={()=>udpatePageNumber&&paginate(pageNo>0?pageNo-1:1)} className="page_text">Previous</button>
@@ -52,7 +52,7 @@ return (
        <button onClick={()=>udpatePageNumber&&paginate((pageNo<pageNumbers.length)?(pageNo+1):pageNumbers.length)} className="page_text">Next</button>
 
        <button onClick={()=>updatePaginationIndex&&updatePaginationIndex(paginationIndex<totalpaginationdivideLength-1?paginationIndex+1:totalpaginationdivideLength-1,pageNumbers.length)} className="page_icon">&raquo;</button>
-         
+      </> : ""}
       </div>
   
   );

@@ -17,21 +17,18 @@ const TodoList = ({history}) => {
 
   useEffect(() => {
 
-    const fetchPosts = async () => {
+    const fetchTodo = async () => {
       setLoading(true);
       const res = await fetch('https://jsonplaceholder.typicode.com/todos')
       res.json()
-      .then(res => setPosts(res))
-      
+      .then(res => setPosts(res))     
       .catch(err => setErrors(err)); 
-      setLoading(false);
-    
+      setLoading(false); 
     };
 
-    fetchPosts();
+    fetchTodo();
     loadUserDetails();
   }, []);
-
 
 
   // Get current posts
@@ -65,6 +62,7 @@ const TodoList = ({history}) => {
      
     }
   }
+
   const updatePaginationData=(data,totalnumbers)=>{
     updatePaginationIndex(data);
     var gethelperData=PaginationHelper.checkingPaginationProcess((data*5)+1,null,totalnumbers,posts,postsPerPage,currentPage);
@@ -72,42 +70,30 @@ const TodoList = ({history}) => {
       setCurrentPage(gethelperData.pageNumber);
     }
   }
-  if(loading){
-     <h3>Loading... </h3>
-  }
+
+  
+
   return (
     
     <div className='container mt-5'>
-      
-        {/* <div className="post_title">
-        <Link to="/dashboard" className="link_header">DashBoard</Link>  
-        {loggedInUser && loggedInUser.role !== "user" &&<Link to="/usermanage" className="link_header">User Management</Link>}
-        <Link to="/todolist" className="link_header">Todo List</Link>
-        
-       
-
-        </div> */}
+   
         <Logout history={history} loggedInUser={loggedInUser}/>
         <div className="todolist_content">
+       
         <table className="table_style">
    
             <tr>
                 <th>To Do Task</th>
-                <th>Status</th>
-                
+                <th>Status</th>              
             </tr>
-         
-            {currentPosts && currentPosts.map(currentPosts => (
+            {loading === true ? <div className="load_class"><h4>Loading...</h4></div> :  
+            currentPosts && currentPosts.map(currentPosts => (
             
-           <tr>
-            
+           <tr>           
                 <td>{currentPosts.title}</td>
-                <td>{currentPosts.completed === true ? "Completed" : "Pending" }</td>
-               
-            
+                <td>{currentPosts.completed === true ? "Completed" : "Pending" }</td>      
             </tr>
             ))} 
-        
     </table>
 
     </div>

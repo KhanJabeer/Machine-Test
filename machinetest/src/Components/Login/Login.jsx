@@ -4,13 +4,17 @@ import './Login.css'
 
 
 const Login = ({ users,changeAuth,history }) => {
-  const[emailError,setEmailError]=useState(false)
-  const[passError,setPassError]=useState(false)
+  const[emailError,setEmailError]=useState({})
+  const[passError,setPassError]=useState({})
 
 const handleSubmit =(e)=>{
+ 
   e.preventDefault()
-   
-    const validUser = users && users.findIndex(user => user.email === loginData.email && user.password === loginData.password)
+    const isValid = validate();
+    if(isValid == true){
+     
+      const validUser = users && users.findIndex(user => user.email === loginData.email && user.password === loginData.password)
+   console.log(validUser,"fjcbkjdf")
     if(validUser !== -1) {
       localStorage.setItem("loggedInUser",JSON.stringify(users[validUser]))
       changeAuth()
@@ -20,7 +24,7 @@ const handleSubmit =(e)=>{
     
     }
    
-  
+  }
 }   
 
 const [loginData,setLoginData] = useState({email:"",password:""})
@@ -29,24 +33,34 @@ const {email,password} = loginData;
 
 const handleChange = (e) => {
   setLoginData({...loginData,[e.target.name]:e.target.value})
- setEmailError(false)
- setPassError(false)
-}
-const validate = (e)=>{
-  e.preventDefault()
-  var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
  
+}
+
+
+const validate = ()=>{
+  
+ const emailError={};
+ const passError={};
+  let isValid=true;
+
  if(loginData && loginData.email === "" ) {
-    setEmailError("Field Required")
-    } else if(re.test(loginData && loginData.email) === false ){
-      setEmailError("Please Include @ . in the Email Address")
+  emailError.emailEmpty="Field Required"
+    isValid=false;
+    } 
+  if(loginData.email.length >0 && !loginData.email.includes("@") ){
+    emailError.emailMissing="Please Include @ . in the Email Address"
+      isValid=false;
     }
  
     
   if(loginData.password === ""){
-    setPassError("Field Required")
+    passError.passEmpty="Field Required"
+    isValid=false;
   }
-  handleSubmit(e)
+    setEmailError(emailError)
+    setPassError(passError)
+    return isValid
+   
 }
 
   return(
@@ -56,7 +70,7 @@ const validate = (e)=>{
           <h1>Login</h1>
         </header>
 
-        <form  onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit} autocomplete="off" >
             <div className="login_fields">
                 <input 
                 className="input_boxes"
@@ -65,8 +79,11 @@ const validate = (e)=>{
                 value={email}
                 placeholder="Email" 
                 onChange={(e) => handleChange(e)}
+                autocomplete="false"
               />
-                <div className="err_msg">{emailError }</div>
+               {Object.keys(emailError).map((key)=>{
+                 return <div className="err_msg">{emailError[key]}</div>
+               })}
             </div>
  
 
@@ -78,12 +95,16 @@ const validate = (e)=>{
                 value={password}
                 placeholder="Password"
                 onChange={(e) => handleChange(e)}
+                autocomplete="false"
                />
-                <div className="err_msg">{passError}</div>
+                {Object.keys(passError).map((key)=>{
+                 return <div className="err_msg">{passError[key]}</div>
+               })}
             </div>
+          
            
             <div className="login_btn">
-            <button onClick={(e)=>validate(e)}>Login</button>
+             <button onClick={handleSubmit}>Login</button>
             </div>
         </form>
     </div>
