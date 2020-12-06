@@ -12,16 +12,13 @@ const handleSubmit =(e)=>{
   e.preventDefault()
     const isValid = validate();
     if(isValid == true){
-     
-      const validUser = users && users.findIndex(user => user.email === loginData.email && user.password === loginData.password)
-   console.log(validUser,"fjcbkjdf")
+     const validUser = users && users.findIndex(user => user.email === loginData.email && user.password === loginData.password)
     if(validUser !== -1) {
       localStorage.setItem("loggedInUser",JSON.stringify(users[validUser]))
       changeAuth()
       history.push("/dashboard")
     }else {
-      alert("Invalid email or password")
-    
+      alert("Invalid email or password")  
     }
    
   }

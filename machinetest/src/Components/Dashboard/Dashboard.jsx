@@ -85,12 +85,9 @@ const searchUser = (e) => {
    return(
     <div>      
      
-           <Logout history={history} loggedInUser={loggedInUser}/>
-          
-    
+        <Logout history={history} loggedInUser={loggedInUser}/>
 
-     
-           <div className="dash_content">
+        <div className="dash_content">
 
           <div className="search_wrap">
             <div className="search_label">Search User</div>

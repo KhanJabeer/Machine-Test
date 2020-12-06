@@ -106,18 +106,9 @@ const UserManage = ({history}) => {
   
   return(
     <div>
-       {/* <header className="usermanage_heads"> */}
-         {/* <div className="usermanage_title">
-        
-         <Link to="/dashboard" className="link_header">DashBoard</Link>
-         {loggedInUser&& loggedInUser.role !== "user" && <Link to="/usermanage" className="link_header">User Management</Link>}
-         <Link to="/todolist" className="link_header">Todo List</Link>
-        </div> */}
+    
         <Logout history={history} loggedInUser={loggedInUser}/>
 
-
-      
-        {/* </header> */}
         <div>
         
          </div>
