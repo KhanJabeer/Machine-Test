@@ -22,8 +22,8 @@ const App = () => {
        localStorage.setItem("loggedInUser","")
      }
      
-      if(!localStorage.users) {
-        localStorage.setItem("users",JSON.stringify(Users))
+      if(!localStorage.users) { 
+        localStorage.setItem("users",JSON.stringify(Users)) 
 
         const userDetails = JSON.parse(localStorage.getItem("users"))
         setUsers(userDetails)

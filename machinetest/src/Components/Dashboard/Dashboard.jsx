@@ -32,8 +32,8 @@ useEffect(() => {
    
   })
   
-  setUserDetails(results)
-},[entersearch])
+  setUserDetails(results) 
+},[entersearch]) 
 
 const loadUserDetails = () => {
   if(localStorage.users) {

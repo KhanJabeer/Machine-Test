@@ -11,10 +11,10 @@ class ValidationLibrary extends Component {
         var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         if (re.test(textValue) === false) {
 
-          return { msg: "Email is invalid", state: false };//validation occurs break the loop & throw the error
+          return { msg: "Email is invalid", state: false };
         }
       } else if (validatorsArray[valid].name === 'address') {
-        var re = /^[a-zA-Z0-9\s,'-.]*$/;
+        var re = /^[a-zA-Z0-9\s,'-.]*$/; 
         if (re.test(textValue) === false) {
           return { msg: "Invalid Address", state: false };
         }

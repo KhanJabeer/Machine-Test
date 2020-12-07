@@ -59,7 +59,7 @@ const validate = ()=>{
     return isValid
    
 }
-
+//object.keys or value insteade of mapping storing each object this is better
   return(
     <div className="login_content">
         <header>
@@ -97,7 +97,8 @@ const validate = ()=>{
                 {Object.keys(passError).map((key)=>{
                  return <div className="err_msg">{passError[key]}</div>
                })}
-            </div>
+            </div> 
+            
           
            
             <div className="login_btn">
