@@ -1,6 +1,8 @@
 .login_content{
     margin-top: 50px;
     padding: 8px;
+    min-height: 300px;
+    text-align: center;
 }
 .login_fields{
     margin: 10px;
@@ -25,4 +27,8 @@
     font-size: 16px;
     color: black;
    cursor: pointer;
+}
+.err_msg{
+    font-size: 12px;
+    color: red;
 }
